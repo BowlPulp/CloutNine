@@ -1,27 +1,29 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { FiMenu, FiArrowRight } from "react-icons/fi";
+import { FiMenu, FiArrowRight, FiSun, FiMoon } from "react-icons/fi";
 
 const FlipNavWrapper = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   return (
-    <div className="bg-gray-50">
-      <FlipNav />
+    <div className={`${isDarkMode ? 'dark bg-gray-900 text-white' : 'bg-gray-50'}`}>
+      <FlipNav isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
     </div>
   );
 };
 
-const FlipNav = () => {
+const FlipNav = ({ isDarkMode, setIsDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="bg-white p-4 border-b-[1px] border-gray-200 flex items-center justify-between relative">
-      <NavLeft setIsOpen={setIsOpen} />
-      <NavRight />
-      <NavMenu isOpen={isOpen} />
+    <nav className={`p-4 border-b-[1px] ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} flex items-center justify-between relative`}>
+      <NavLeft setIsOpen={setIsOpen} isDarkMode={isDarkMode} />
+      <NavRight isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+      <NavMenu isOpen={isOpen} isDarkMode={isDarkMode} />
     </nav>
   );
 };
 
-const Logo = () => {
+const Logo = ({ isDarkMode }) => {
   return (
     <div className="flex items-center gap-2">
       <img
@@ -31,34 +33,32 @@ const Logo = () => {
         height={32}
         className="object-contain"
       />
-      <p className="text-xl font-bold text-blue-800">CloutNine</p>
+      <p className={`text-xl font-bold ${isDarkMode ? 'text-blue-300' : 'text-blue-800'}`}>CloutNine</p>
     </div>
   );
 };
 
-
-
-const NavLeft = ({ setIsOpen }) => {
+const NavLeft = ({ setIsOpen, isDarkMode }) => {
   return (
     <div className="flex items-center gap-6">
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="block lg:hidden text-gray-950 text-2xl"
+        className={`block lg:hidden text-2xl ${isDarkMode ? 'text-white' : 'text-gray-950'}`}
         onClick={() => setIsOpen((pv) => !pv)}
       >
         <FiMenu />
       </motion.button>
-      <Logo />
-      <NavLink text="Home" />
-      <NavLink text="About" />
-      <NavLink text="Portfolio" />
-      <NavLink text="Contact" />
+      <Logo isDarkMode={isDarkMode} />
+      <NavLink text="Home" isDarkMode={isDarkMode} />
+      <NavLink text="About" isDarkMode={isDarkMode} />
+      <NavLink text="Portfolio" isDarkMode={isDarkMode} />
+      <NavLink text="Contact" isDarkMode={isDarkMode} />
     </div>
   );
 };
 
-const NavLink = ({ text }) => {
+const NavLink = ({ text, isDarkMode }) => {
   return (
     <a
       href="#"
@@ -66,8 +66,8 @@ const NavLink = ({ text }) => {
       className="hidden lg:block h-[30px] overflow-hidden font-medium"
     >
       <motion.div whileHover={{ y: -30 }}>
-        <span className="flex items-center h-[30px] text-gray-500">{text}</span>
-        <span className="flex items-center h-[30px] text-indigo-600">
+        <span className={`flex items-center h-[30px] ${isDarkMode ? 'text-gray-300' : 'text-gray-500'}`}>{text}</span>
+        <span className={`flex items-center h-[30px] ${isDarkMode ? 'text-blue-400' : 'text-indigo-600'}`}>
           {text}
         </span>
       </motion.div>
@@ -75,44 +75,44 @@ const NavLink = ({ text }) => {
   );
 };
 
-const NavRight = () => {
+const NavRight = ({ isDarkMode, setIsDarkMode }) => {
   return (
     <div className="flex items-center gap-4">
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="px-4 py-2 bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-medium rounded-md whitespace-nowrap"
+        onClick={() => setIsDarkMode(!isDarkMode)}
+        className={`p-2 rounded-full transition-colors duration-300 ${
+          isDarkMode 
+            ? 'bg-gray-700 text-yellow-400 hover:bg-gray-600' 
+            : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+        }`}
       >
-        Sign in
-      </motion.button>
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="px-4 py-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-medium rounded-md whitespace-nowrap"
-      >
-        Sign up
+        {isDarkMode ? <FiSun /> : <FiMoon />}
       </motion.button>
     </div>
   );
 };
 
-const NavMenu = ({ isOpen }) => {
+const NavMenu = ({ isOpen, isDarkMode }) => {
   return (
     <motion.div
       variants={menuVariants}
       initial="closed"
       animate={isOpen ? "open" : "closed"}
-      className="absolute p-4 bg-white shadow-lg left-0 right-0 top-full origin-top flex flex-col gap-4"
+      className={`absolute p-4 shadow-lg left-0 right-0 top-full origin-top flex flex-col gap-4 ${
+        isDarkMode ? 'bg-gray-800' : 'bg-white'
+      }`}
     >
-      <MenuLink text="Home" />
-      <MenuLink text="About" />
-      <MenuLink text="Portfolio" />
-      <MenuLink text="Contact" />
+      <MenuLink text="Home" isDarkMode={isDarkMode} />
+      <MenuLink text="About" isDarkMode={isDarkMode} />
+      <MenuLink text="Portfolio" isDarkMode={isDarkMode} />
+      <MenuLink text="Contact" isDarkMode={isDarkMode} />
     </motion.div>
   );
 };
 
-const MenuLink = ({ text }) => {
+const MenuLink = ({ text, isDarkMode }) => {
   return (
     <motion.a
       variants={menuLinkVariants}
@@ -121,11 +121,11 @@ const MenuLink = ({ text }) => {
       className="h-[30px] overflow-hidden font-medium text-lg flex items-start gap-2"
     >
       <motion.span variants={menuLinkArrowVariants}>
-        <FiArrowRight className="h-[30px] text-gray-950" />
+        <FiArrowRight className={`h-[30px] ${isDarkMode ? 'text-white' : 'text-gray-950'}`} />
       </motion.span>
       <motion.div whileHover={{ y: -30 }}>
-        <span className="flex items-center h-[30px] text-gray-500">{text}</span>
-        <span className="flex items-center h-[30px] text-indigo-600">
+        <span className={`flex items-center h-[30px] ${isDarkMode ? 'text-gray-300' : 'text-gray-500'}`}>{text}</span>
+        <span className={`flex items-center h-[30px] ${isDarkMode ? 'text-blue-400' : 'text-indigo-600'}`}>
           {text}
         </span>
       </motion.div>

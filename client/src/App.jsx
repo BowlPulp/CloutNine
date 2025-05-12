@@ -9,21 +9,25 @@ import LandingPage from './pages/LandingPage'
 import NotFoundPage from './pages/NotFoundPage'
 import Layout from './Layouts/Layout'
 import PortfolioPage from './pages/PortfolioPage'
+import FAQPage from './pages/FaqPage'
+import ContactUsPage from './pages/ContactUsPage'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-     <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<LandingPage />} />
-            <Route path='/about' element={<AboutUsPage/>}/>
-           <Route path='/portfolio' element={<PortfolioPage/>}/>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<LandingPage />} />
+          <Route path='/about' element={<AboutUsPage />} />
+          <Route path='/portfolio' element={<PortfolioPage />} />
+          <Route path='/faq' element={<FAQPage />} />
+          <Route path="/contact" element={<ContactUsPage />} />
 
-        <Route path="*" element={<NotFoundPage />} />
-          </Route>
-        </Routes>
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
 
     </>
   )

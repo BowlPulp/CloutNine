@@ -90,31 +90,15 @@ function Footer() {
           {/* Newsletter */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Stay Connected</h4>
-            <form onSubmit={handleEmailSubmit} className="mb-4">
-              <div className="flex">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full p-2 bg-gray-800 text-white rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <button 
-                  type="submit" 
-                  className="bg-blue-600 text-white px-4 rounded-r-lg hover:bg-blue-700 transition-colors"
-                >
-                  <Mail size={20} />
-                </button>
-              </div>
-            </form>
+            
             <div className="space-y-2">
               <div className="flex items-center text-gray-400">
                 <Phone size={16} className="mr-2" />
-                <span>(555) 123-4567</span>
+                <span>9137612106</span>
               </div>
               <div className="flex items-center text-gray-400">
                 <Mail size={16} className="mr-2" />
-                <span>hello@cloutNine.com</span>
+                <span>cloutnine.work@gmail.com</span>
               </div>
               <div className="flex items-center text-gray-400">
                 <MapPin size={16} className="mr-2" />

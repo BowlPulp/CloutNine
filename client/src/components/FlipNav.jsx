@@ -51,7 +51,7 @@ const NavLeft = ({ setIsOpen, isDarkMode }) => {
       </motion.button>
       <Logo isDarkMode={isDarkMode} />
       <NavLink text="Home" isDarkMode={isDarkMode} />
-      <NavLink text="About" isDarkMode={isDarkMode} />
+      <NavLink text="About" isDarkMode={isDarkMode}  />
       <NavLink text="Portfolio" isDarkMode={isDarkMode} />
       <NavLink text="Contact" isDarkMode={isDarkMode} />
     </div>

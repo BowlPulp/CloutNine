@@ -1,0 +1,198 @@
+import React, { useState } from 'react';
+import { ArrowUp, Target, BarChart2, Rocket, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+
+// Footer Component
+function Footer() {
+  const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState('');
+
+  const handleEmailSubmit = (e) => {
+    e.preventDefault();
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (emailRegex.test(email)) {
+      alert('Thank you for subscribing!');
+      setEmail('');
+    } else {
+      alert('Please enter a valid email address.');
+    }
+  };
+
+  return (
+    <footer className="bg-gray-900 text-white">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid md:grid-cols-4 gap-8">
+          {/* Brand Column */}
+          <div>
+            <h3 className="text-2xl font-bold mb-4 text-white">CloutNine</h3>
+            <p className="text-gray-400 mb-4">
+              Empowering brands to conquer the digital landscape through strategic marketing and creative excellence.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Facebook size={24} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Twitter size={24} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Instagram size={24} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <Linkedin size={24} />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              {[
+                { name: 'About Us', link: '#' },
+                { name: 'Services', link: '#' },
+                { name: 'Portfolio', link: '#' },
+                { name: 'Blog', link: '#' },
+                { name: 'Contact', link: '#' }
+              ].map((item) => (
+                <li key={item.name}>
+                  <a 
+                    href={item.link} 
+                    className="text-gray-400 hover:text-white hover:pl-2 transition-all duration-300"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Our Services</h4>
+            <ul className="space-y-2">
+              {[
+                'Social Media Marketing',
+                'Content Strategy',
+                'Brand Development',
+                'Performance Analytics',
+                'Digital Advertising'
+              ].map((service) => (
+                <li key={service}>
+                  <span className="text-gray-400 hover:text-white transition-colors">
+                    {service}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Stay Connected</h4>
+            <form onSubmit={handleEmailSubmit} className="mb-4">
+              <div className="flex">
+                <input 
+                  type="email" 
+                  placeholder="Enter your email" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full p-2 bg-gray-800 text-white rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <button 
+                  type="submit" 
+                  className="bg-blue-600 text-white px-4 rounded-r-lg hover:bg-blue-700 transition-colors"
+                >
+                  <Mail size={20} />
+                </button>
+              </div>
+            </form>
+            <div className="space-y-2">
+              <div className="flex items-center text-gray-400">
+                <Phone size={16} className="mr-2" />
+                <span>(555) 123-4567</span>
+              </div>
+              <div className="flex items-center text-gray-400">
+                <Mail size={16} className="mr-2" />
+                <span>hello@cloutNine.com</span>
+              </div>
+              <div className="flex items-center text-gray-400">
+                <MapPin size={16} className="mr-2" />
+                <span>123 Digital St., Marketing City</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="border-t border-gray-800 mt-8 pt-6 text-center">
+          <p className="text-gray-500">
+            © {currentYear} CloutNine. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default function AboutUs() {
+  const [activeStep, setActiveStep] = useState(0);
+
+  return (
+    <>
+      <Footer />
+    </>
+  );
+}
+
+// Custom animations for Tailwind
+const styles = `
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from { 
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-in {
+  0% { 
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in { animation: fade-in 1s ease-out; }
+.animate-slide-in-right { animation: slide-in-right 1s ease-out; }
+.animate-fade-in-up { animation: fade-in-up 1s ease-out; }
+.animate-bounce-in { animation: bounce-in 1s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+`;

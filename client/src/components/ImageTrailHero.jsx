@@ -10,22 +10,18 @@ export const ImageTrailHero = () => {
       renderImageBuffer={50}
       rotationRange={25}
       images={[
-        "/imgs/active/1.jpg",
-        "/imgs/active/2.jpg",
-        "/imgs/active/3.jpg",
-        "/imgs/active/4.jpg",
-        "/imgs/active/5.jpg",
-        "/imgs/active/6.jpg",
-        "/imgs/active/7.jpg",
-        "/imgs/active/8.jpg",
-        "/imgs/active/9.jpg",
-        "/imgs/active/10.jpg",
-        "/imgs/active/11.jpg",
-        "/imgs/active/12.jpg",
-        "/imgs/active/13.jpg",
-        "/imgs/active/14.jpg",
-        "/imgs/active/15.jpg",
-        "/imgs/active/16.jpg",
+        "logoblue.png",
+        "logogreen.png",
+        "logored.png",
+        "logobrown.png",
+         "logoblue.png",
+        "logogreen.png",
+        "logored.png",
+        "logobrown.png",
+         "logoblue.png",
+        "logogreen.png",
+        "logored.png",
+        "logobrown.png",
       ]}
     >
       <section className="h-screen bg-slate-200">
@@ -43,13 +39,11 @@ const Copy = () => {
       <div className="mx-auto flex max-w-7xl items-end justify-between p-4 md:p-8">
         <div>
           <h1 className="mb-6 max-w-4xl text-6xl font-black leading-[1.1] text-slate-900 md:text-8xl">
-            The Pros Work with <span className="text-indigo-500">CLOUTNINE</span>
+            Lifting your brand with <span className="text-indigo-500">CLOUTNINE</span>
           </h1>
           <p className="max-w-xl text-slate-700 md:text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-            optio quam voluptates accusantium unde labore maiores delectus
-            tempora velit cum.
-          </p>
+           We make, market, and manage. Cloutnine provides end-to-end digital marketing services for all types of brands and businesses. 
+        </p>
         </div>
         <FiArrowDownCircle className="hidden text-8xl text-slate-500 md:block" />
       </div>

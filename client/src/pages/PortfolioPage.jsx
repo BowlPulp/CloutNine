@@ -9,8 +9,8 @@ const portfolioData = {
     color: "bg-orange-50",
     icon: Coffee,
     videos: [
-      { id: 1, title: "Cafe Project", videoUrl: "https://drive.google.com/file/d/1FyYu2jwkruA0LJo1rrk9iAing9qtJ8XC/view?usp=drive_link" },
-      { id: 2, title: "Restaurant Branding", videoUrl: "https://example.com/video2.mp4" },
+      { id: 1, title: "Tealogy Cafe", videoUrl: "https://drive.google.com/file/d/1FyYu2jwkruA0LJo1rrk9iAing9qtJ8XC/view?usp=drive_link" },
+      { id: 2, title: "Mehfil Cafe", videoUrl: "https://drive.google.com/file/d/1Cq8T77UGCFa_v2dP9brTkD1tzk1w7dSG/view?usp=drive_link" },
     ]
   },
   "Real Estate": {

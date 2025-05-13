@@ -49,11 +49,11 @@ function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {[
-                { name: 'About Us', link: '#' },
+                { name: 'About Us', link: '/about' },
                 { name: 'Services', link: '#' },
-                { name: 'Portfolio', link: '#' },
+                { name: 'Portfolio', link: '/portfolio' },
                 { name: 'Blog', link: '#' },
-                { name: 'Contact', link: '#' }
+                { name: 'Contact', link: '/contact' }
               ].map((item) => (
                 <li key={item.name}>
                   <a 
@@ -99,10 +99,6 @@ function Footer() {
               <div className="flex items-center text-gray-400">
                 <Mail size={16} className="mr-2" />
                 <span>cloutnine.work@gmail.com</span>
-              </div>
-              <div className="flex items-center text-gray-400">
-                <MapPin size={16} className="mr-2" />
-                <span>123 Digital St., Marketing City</span>
               </div>
             </div>
           </div>

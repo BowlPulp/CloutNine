@@ -9,7 +9,7 @@ const portfolioData = {
     color: "bg-orange-50",
     icon: Coffee,
     videos: [
-      { id: 1, title: "Cafe Project", videoUrl: "https://example.com/video1.mp4" },
+      { id: 1, title: "Cafe Project", videoUrl: "https://drive.google.com/file/d/1FyYu2jwkruA0LJo1rrk9iAing9qtJ8XC/view?usp=drive_link" },
       { id: 2, title: "Restaurant Branding", videoUrl: "https://example.com/video2.mp4" },
     ]
   },

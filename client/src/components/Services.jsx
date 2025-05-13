@@ -6,7 +6,8 @@ import {
   Instagram, 
   BarChart, 
   Globe, 
-  Target 
+  Target,
+  Download
 } from 'lucide-react';
 
 // Service card component with animation
@@ -25,6 +26,33 @@ const ServiceCard = ({ icon: Icon, title, description }) => {
       </div>
       <p className="text-gray-600">{description}</p>
     </motion.div>
+  );
+};
+
+// Download Button Component
+const DownloadButton = () => {
+  const handleDownload = () => {
+    // Create an anchor element and trigger download
+    const link = document.createElement('a');
+    link.href = '/CloutNinePitchDeck.pdf';
+    link.download = 'CloutNinePitchDeck.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  return (
+    <motion.button
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-lg shadow-md flex items-center justify-center mx-auto mt-12 transition-colors duration-300"
+      onClick={handleDownload}
+    >
+      <Download className="mr-2" size={20} />
+      Download PitchDeck
+    </motion.button>
   );
 };
 
@@ -79,6 +107,9 @@ const Services = () => {
             />
           ))}
         </div>
+        
+        {/* Download PitchDeck Button */}
+        <DownloadButton />
       </div>
     </div>
   );

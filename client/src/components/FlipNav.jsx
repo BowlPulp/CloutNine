@@ -50,19 +50,18 @@ const NavLeft = ({ setIsOpen, isDarkMode }) => {
         <FiMenu />
       </motion.button>
       <Logo isDarkMode={isDarkMode} />
-      <NavLink text="Home" isDarkMode={isDarkMode} />
-      <NavLink text="About" isDarkMode={isDarkMode}  />
-      <NavLink text="Portfolio" isDarkMode={isDarkMode} />
-      <NavLink text="Contact" isDarkMode={isDarkMode} />
+      <NavLink text="Home" href="/" isDarkMode={isDarkMode} />
+      <NavLink text="About" href="/about" isDarkMode={isDarkMode} />
+      <NavLink text="Portfolio" href="/portfolio" isDarkMode={isDarkMode} />
+      <NavLink text="Contact" href="/contact" isDarkMode={isDarkMode} />
     </div>
   );
 };
 
-const NavLink = ({ text, isDarkMode }) => {
+const NavLink = ({ text, href, isDarkMode }) => {
   return (
     <a
-      href="#"
-      rel="nofollow"
+      href={href}
       className="hidden lg:block h-[30px] overflow-hidden font-medium"
     >
       <motion.div whileHover={{ y: -30 }}>
@@ -104,20 +103,19 @@ const NavMenu = ({ isOpen, isDarkMode }) => {
         isDarkMode ? 'bg-gray-800' : 'bg-white'
       }`}
     >
-      <MenuLink text="Home" isDarkMode={isDarkMode} />
-      <MenuLink text="About" isDarkMode={isDarkMode} />
-      <MenuLink text="Portfolio" isDarkMode={isDarkMode} />
-      <MenuLink text="Contact" isDarkMode={isDarkMode} />
+      <MenuLink text="Home" href="/" isDarkMode={isDarkMode} />
+      <MenuLink text="About" href="/about" isDarkMode={isDarkMode} />
+      <MenuLink text="Portfolio" href="/portfolio" isDarkMode={isDarkMode} />
+      <MenuLink text="Contact" href="/contact" isDarkMode={isDarkMode} />
     </motion.div>
   );
 };
 
-const MenuLink = ({ text, isDarkMode }) => {
+const MenuLink = ({ text, href, isDarkMode }) => {
   return (
     <motion.a
       variants={menuLinkVariants}
-      rel="nofollow"
-      href="#"
+      href={href}
       className="h-[30px] overflow-hidden font-medium text-lg flex items-start gap-2"
     >
       <motion.span variants={menuLinkArrowVariants}>

@@ -11,6 +11,7 @@ import Layout from './Layouts/Layout'
 import PortfolioPage from './pages/PortfolioPage'
 import FAQPage from './pages/FaqPage'
 import ContactUsPage from './pages/ContactUsPage'
+import ServicesShowcase from './pages/ServicesShowcase'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,7 +25,8 @@ function App() {
           <Route path='/portfolio' element={<PortfolioPage />} />
           <Route path='/faq' element={<FAQPage />} />
           <Route path="/contact" element={<ContactUsPage />} />
-
+          <Route path='/services' element={<ServicesShowcase/>}/>
+          
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

@@ -1,0 +1,67 @@
+:root {
+  /* Default theme (Light Mode) - Blue-focused palette */
+  --primary: #1E6FD9;     /* Vibrant blue - main brand color */
+  --primary-light: #569DF4;
+  --primary-dark: #0E4C9E;
+  
+  --secondary: #34C6CD;   /* Teal - complementary to blue */
+  --secondary-light: #7CEFF5;
+  --secondary-dark: #1A9DA3;
+
+  --neutral: #F0F4F8;     /* Light blue-gray - background */
+  --neutral-dark: #D0DCE7;
+  
+  --text-primary: #1A2A42;
+  --text-secondary: #4A5D7B;
+  --text-light: #FFFFFF;
+  
+  --border: #BACBE2;
+  --shadow: rgba(30, 111, 217, 0.15);
+  
+  --success: #2ECC71;
+  --warning: #F1C40F;
+  --error: #E74C3C;
+}
+
+/* Dark theme */
+.theme-dark {
+  --primary: #3A8AE6;     /* Brighter blue for dark mode */
+  --primary-light: #72ACFA;
+  --primary-dark: #1D63B3;
+  
+  --secondary: #26A5AC;   /* Darker teal for dark mode */
+  --secondary-light: #5ED9E0;
+  --secondary-dark: #167780;
+  
+  --accent: #FF9633;      /* Brighter orange for dark mode */
+  --accent-light: #FFAF66;
+  --accent-dark: #D97A20;
+  
+  --neutral: #12243A;     /* Dark blue-gray - background */
+  --neutral-dark: #0A1525;
+  
+  --text-primary: #E6EDF7;
+  --text-secondary: #A0B4D0;
+  --text-light: #FFFFFF;
+  
+  --border: #2A456A;
+  --shadow: rgba(0, 0, 0, 0.3);
+  
+  --success: #25A25A;
+  --warning: #DDB100;
+  --error: #D64C3B;
+}
+
+/* Example usage classes */
+.bg-primary { background-color: var(--primary); color: var(--text-light); }
+.bg-secondary { background-color: var(--secondary); color: var(--text-light); }
+.bg-accent { background-color: var(--accent); color: var(--text-light); }
+.bg-neutral { background-color: var(--neutral); color: var(--text-primary); }
+
+.text-primary { color: var(--primary); }
+.text-secondary { color: var(--secondary); }
+.text-accent { color: var(--accent); }
+
+.border-primary { border-color: var(--primary); }
+.border-secondary { border-color: var(--secondary); }
+.border-accent { border-color: var(--accent); }

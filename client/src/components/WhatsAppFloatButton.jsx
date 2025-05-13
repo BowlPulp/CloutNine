@@ -1,11 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 
 const WhatsAppFloatButton = ({ 
-  phoneNumber = '+1234567890', 
+  phoneNumber = '+9137612106', 
   message = 'Hello, I have a question!',
   className = '' 
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [portalElement, setPortalElement] = useState(null);
+
+  useEffect(() => {
+    // Create a portal container at the document level
+    let element = document.getElementById('whatsapp-portal-container');
+    
+    if (!element) {
+      element = document.createElement('div');
+      element.id = 'whatsapp-portal-container';
+      
+      // Apply styles to ensure it's always on top
+      element.style.position = 'fixed';
+      element.style.zIndex = '99999'; // Higher than anything else
+      element.style.pointerEvents = 'none'; // Allow clicks to pass through by default
+      element.style.width = '100%';
+      element.style.height = '100%';
+      element.style.top = '0';
+      element.style.left = '0';
+      
+      // Add to body
+      document.body.appendChild(element);
+      
+      // Add global CSS to ensure other elements don't overlap
+      const style = document.createElement('style');
+      style.innerHTML = `
+        /* Make sure the problematic div stays behind */
+        .mx-auto.flex.max-w-7xl.items-end.justify-between.p-4,
+        .mx-auto.flex.max-w-7xl.items-end.justify-between.md\\:p-8,
+        .mx-auto.flex.max-w-7xl.items-end.justify-between.p-4.md\\:p-8 {
+          z-index: 10 !important;
+          position: relative !important;
+        }
+        
+        /* Make sure whatsapp button is always on top */
+        #whatsapp-portal-container {
+          isolation: isolate;
+        }
+        
+        #whatsapp-portal-container > div {
+          pointer-events: auto !important;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+    
+    setPortalElement(element);
+    
+    // Cleanup on unmount
+    return () => {
+      // Only remove if this is the only instance using it
+      if (document.querySelectorAll('[id^="whatsapp-float-"]').length <= 1) {
+        document.body.removeChild(element);
+      }
+    };
+  }, []);
 
   const handleWhatsAppChat = () => {
     const encodedMessage = encodeURIComponent(message);
@@ -13,10 +69,22 @@ const WhatsAppFloatButton = ({
     window.open(whatsappUrl, '_blank');
   };
 
-  return (
-    <div className={`fixed bottom-6 right-6 z-[9999] ${className}`}>
+  // Component to be rendered into the portal
+  const WhatsAppButtonContent = () => (
+    <div 
+      id={`whatsapp-float-${Math.random().toString(36).substr(2, 9)}`}
+      className={`${className}`} 
+      style={{
+        position: 'fixed',
+        bottom: '1.5rem',
+        right: '1.5rem',
+        pointerEvents: 'auto',
+      }}
+    >
       {isExpanded && (
-        <div className="absolute bottom-full mb-4 right-0 bg-white shadow-lg rounded-lg p-4 border border-gray-200">
+        <div 
+          className="absolute bottom-full mb-4 right-0 bg-white shadow-lg rounded-lg p-4 border border-gray-200"
+        >
           <p className="text-sm text-gray-700 mb-2">Chat with us on WhatsApp</p>
           <button 
             onClick={handleWhatsAppChat}
@@ -53,6 +121,16 @@ const WhatsAppFloatButton = ({
         </svg>
       </button>
     </div>
+  );
+
+  // Render nothing in the component's original place, and use portal instead
+  return (
+    <>
+      {portalElement && ReactDOM.createPortal(
+        <WhatsAppButtonContent />,
+        portalElement
+      )}
+    </>
   );
 };
 

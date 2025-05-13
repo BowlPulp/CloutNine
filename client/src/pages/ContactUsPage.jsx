@@ -18,11 +18,11 @@ const ContactUsPage = () => {
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <Mail className="w-5 h-5 text-blue-600" />
-              <span className="text-lg">contact@example.com</span>
+              <span className="text-lg">cloutnine.work@gmail.com</span>
             </div>
             <div className="flex items-center space-x-3">
               <Phone className="w-5 h-5 text-green-600" />
-              <span className="text-lg">+1 (234) 567-8901</span>
+              <span className="text-lg">9137612106</span>
             </div>
             <div className="flex items-center space-x-3">
               <Instagram className="w-5 h-5 text-pink-500" />

@@ -21,7 +21,7 @@ const servicesData = [
       "Professional setup and optimization of your social media profiles to maximize visibility and engagement.",
     icon: Settings,
     color: "bg-blue-500",
-    image: "", // No image provided
+    image: "AccountSetup.png", // No image provided
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ const servicesData = [
       "High-quality, engaging content tailored to your brand voice and target audience needs.",
     icon: FileText,
     color: "bg-purple-500",
-    image: "", // No image provided
+    image: "ContentCreation.jpeg", // No image provided
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const servicesData = [
       "Strategic planning to align content with business goals and audience interests for maximum impact.",
     icon: Lightbulb,
     color: "bg-yellow-500",
-    image: "", // No image provided
+    image: "ContentStrategy.jpg", // No image provided
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const servicesData = [
       "Optimal timing of posts to reach your audience when they're most active and receptive.",
     icon: Calendar,
     color: "bg-green-500",
-  image: "", // No image provided
+  image: "ContentScheduling.jpg", // No image provided
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const servicesData = [
       "Reliable and consistent publishing across multiple platforms to maintain audience engagement.",
     icon: Send,
     color: "bg-red-500",
-    image: "", // No image provided
+    image: "ContentPosting.png", // No image provided
   },
   {
     id: 6,
@@ -66,7 +66,7 @@ const servicesData = [
       "Strategic promotion to expand reach and drive meaningful engagement with your target audience.",
     icon: Megaphone,
     color: "bg-indigo-500",
-  image: "", // No image provided
+  image: "ContentMarketing.jpeg", // No image provided
   },
   {
     id: 7,
@@ -75,7 +75,7 @@ const servicesData = [
       "Comprehensive data analysis and insights to measure performance and inform future strategies.",
     icon: BarChart2,
     color: "bg-teal-500",
-    image: "", // No image provided
+    image: "AnalyticsAndReporting.jpeg", // No image provided
   },
   {
     id: 8,
@@ -84,7 +84,7 @@ const servicesData = [
       "Professional website creation tailored to your brand and business objectives.",
     icon: Code,
     color: "bg-pink-500",
-    image: "Website.jpg", // No image provided
+    image: "WebsiteDevelopment.jpeg", // No image provided
   },
 ];
 

@@ -56,7 +56,7 @@ const Drip = ({ left, height, delay }) => {
         viewBox="0 0 6 6"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute left-full top-0"
+        className="absolute left-full top-10 p-2"
       >
         <g clipPath="url(#clip0_1077_28)">
           <path

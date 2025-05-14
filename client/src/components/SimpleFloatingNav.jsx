@@ -16,7 +16,7 @@ const SimpleFloatingNav = () => {
   return (
     <nav className="fixed left-[50%] top-8 z-[9999] w-fit -translate-x-[50%] text-sm text-[var(--primary)]">
       {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center gap-6 rounded-lg border-[1px] border-neutral-700 bg-neutral-100 p-2">
+      <div className="hidden md:flex items-center gap-6 rounded-lg border-[1px] border-neutral-700 bg-neutral-100 p-2 mb-10">
         <Logo />
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>

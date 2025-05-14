@@ -10,18 +10,30 @@ export const ImageTrailHero = () => {
       renderImageBuffer={50}
       rotationRange={25}
       images={[
-        "logoblue.png",
-        "logogreen.png",
-        "logored.png",
-        "logobrown.png",
+        // "AccountSetup.jpg",
+        // "ContentCreation.jpg",
+        // "Report.jpg",
+        // "Scheduling.jpg",
+        // //  "Marketing.jpg",
+        // "Website.jpg",
+        // "ContentStrategy.jpg",
+        // "AccountSetup.jpg",
+        // "ContentCreation.jpg",
+        // "Report.jpg",
+        // "Scheduling.jpg",
+        // //  "Marketing.jpg",
+        // "Website.jpg",
+        // "ContentStrategy.jpg",
          "logoblue.png",
         "logogreen.png",
         "logored.png",
         "logobrown.png",
+         "logobrown.png",
          "logoblue.png",
         "logogreen.png",
         "logored.png",
         "logobrown.png",
+        
       ]}
     >
       <section className="h-screen bg-slate-200">
@@ -39,13 +51,13 @@ const Copy = () => {
       <div className="mx-auto flex max-w-7xl items-end justify-between p-4 md:p-8">
         <div>
           <h1 className="mb-6 max-w-4xl text-6xl font-black leading-[1.1] text-slate-900 md:text-8xl">
-            Lifting your brand with <span className="text-indigo-500">CLOUTNINE</span>
+            Lifting your brand with <span className="text-[#004396]">CLOUTNINE</span>
           </h1>
           <p className="max-w-xl text-slate-700 md:text-lg">
            We make, market, and manage. Cloutnine provides end-to-end digital marketing services for all types of brands and businesses. 
         </p>
         </div>
-        <FiArrowDownCircle className="hidden text-8xl text-slate-500 md:block" />
+        <FiArrowDownCircle className="hidden text-8xl text-[var(--accent)] md:block" />
       </div>
     </div>
   );

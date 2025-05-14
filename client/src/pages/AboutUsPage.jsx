@@ -50,7 +50,7 @@ export default function AboutUsPage() {
                 {/* How We Do It Section */}
                 <section className="mb-16 animate-fade-in-up">
                     <div className="bg-white shadow-lg rounded-xl p-8 md:p-12 hover:shadow-2xl transition-shadow duration-300">
-                        <h2 className="text-2xl font-semibold text-indigo-600 mb-6 flex items-center">
+                        <h2 className="text-2xl font-semibold text-[var(--primary)] mb-6 flex items-center">
                             <BarChart2 className="mr-3 text-indigo-500" /> How We Do It
                         </h2>
                         <ol className="border-l-4 border-indigo-300">

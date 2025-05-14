@@ -5,7 +5,9 @@ import { FiMenu, FiArrowRight } from "react-icons/fi";
 const FlipNavWrapper = () => {
   return (
     <div className="bg-gray-50">
+      
       <FlipNav />
+       <div className="h-1 bg-gradient-to-r from-[var(--primary)] via-to-[var(--accent)]" />
     </div>
   );
 };
@@ -35,7 +37,7 @@ const Logo = () => {
         height={32}
         className="object-contain"
       />
-      <p className="text-xl font-bold text-blue-800">CloutNine</p>
+      <p className="text-xl font-bold text-[var(--primary)]">CloutNine</p>
     </div>
   );
 };
@@ -69,7 +71,7 @@ const NavLink = ({ text, href }) => {
     >
       <motion.div whileHover={{ y: -30 }}>
         <span className="flex items-center h-[30px] text-gray-500">{text}</span>
-        <span className="flex items-center h-[30px] text-indigo-600">
+        <span className="flex items-center h-[30px] text-[var(--primary)]">
           {text}
         </span>
       </motion.div>
@@ -107,7 +109,7 @@ const MenuLink = ({ text, href, handleClick }) => {
       </motion.span>
       <motion.div whileHover={{ y: -30 }}>
         <span className="flex items-center h-[30px] text-gray-500">{text}</span>
-        <span className="flex items-center h-[30px] text-indigo-600">
+        <span className="flex items-center h-[30px] text-[var(--primary)]">
           {text}
         </span>
       </motion.div>

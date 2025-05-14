@@ -203,7 +203,7 @@ export default function PricingTiers() {
                   className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-300 ${
                     index === 3 
                       ? 'bg-white border-2 border-amber-500 text-amber-700 hover:bg-amber-50' 
-                      : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white'
+                      : 'bg-gradient-to-r from-blue-600 to-[var(--primary)] hover:from-blue-700 hover:to-indigo-700 text-white'
                   }`}
                 >
                   {index === 3 ? 'Book Consultation' : `Get ${tier.name}`}

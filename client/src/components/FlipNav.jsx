@@ -15,17 +15,37 @@ const FlipNavWrapper = () => {
 const FlipNav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Handle closing the menu when clicking on a link
-  const handleLinkClick = () => {
-    setIsOpen(false);
-  };
+  const handleLinkClick = () => setIsOpen(false);
+
   return (
     <nav className="p-4 border-b-[1px] bg-white border-gray-200 flex items-center justify-between relative z-50">
-      <NavLeft setIsOpen={setIsOpen} />
+      <div className="flex items-center gap-6">
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="block lg:hidden text-2xl text-gray-950"
+          onClick={() => setIsOpen((pv) => !pv)}
+        >
+          <FiMenu />
+        </motion.button>
+        <Logo />
+      </div>
+
+      {/* Desktop NavLinks (right side) */}
+      <div className="hidden lg:flex items-center gap-6 ml-auto">
+        <NavLink text="Home" href="/" />
+        <NavLink text="About" href="/about" />
+        <NavLink text="Services" href="/services" />
+        <NavLink text="Portfolio" href="/portfolio" />
+        <NavLink text="Contact" href="/contact" />
+      </div>
+
+      {/* Mobile NavMenu */}
       <NavMenu isOpen={isOpen} handleLinkClick={handleLinkClick} />
     </nav>
   );
 };
+
 
 const Logo = () => {
   return (

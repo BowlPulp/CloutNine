@@ -48,7 +48,7 @@ const Drip = ({ left, height, delay }) => {
     >
       <div
         style={{ height }}
-        className="w-2 rounded-b-full bg-[var(--accent)] transition-colors group-hover:bg-[var(--accent)]"
+        className="w-2 rounded-b-full bg-[var(--primary)] transition-colors group-hover:bg-[var(--primary)]"
       />
       <svg
         width="6"
@@ -63,7 +63,7 @@ const Drip = ({ left, height, delay }) => {
             fillRule="evenodd"
             clipRule="evenodd"
             d="M5.4 0H0V5.4C0 2.41765 2.41766 0 5.4 0Z"
-            className="fill-[var(--accent)] transition-colors group-hover:fill-[var(--accent)]"
+            className="fill-[var(--primary)] transition-colors group-hover:fill-[var(--primary)]"
           />
         </g>
         <defs>
@@ -85,7 +85,7 @@ const Drip = ({ left, height, delay }) => {
             fillRule="evenodd"
             clipRule="evenodd"
             d="M5.4 0H0V5.4C0 2.41765 2.41766 0 5.4 0Z"
-            className="fill-[var(--accent)] transition-colors group-hover:fill-[var(--accent)]"
+            className="fill-[var(--primary)] transition-colors group-hover:fill-[var(--primary)]"
           />
         </g>
         <defs>
@@ -105,7 +105,7 @@ const Drip = ({ left, height, delay }) => {
           repeat: Infinity,
           repeatDelay: 2,
         }}
-        className="absolute top-full h-2 w-2 rounded-full bg-[var(--accent)] transition-colors group-hover:bg-[var(--accent)]"
+        className="absolute top-full h-2 w-2 rounded-full bg-[var(--primary)] transition-colors group-hover:bg-[var(--primary)]"
       />
     </motion.div>
   );
@@ -129,7 +129,7 @@ const DownloadButton = () => {
       animate={{ opacity: 1, scale: 1 }}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="group relative bg-[var(--accent)] hover:bg-[var(--accent)] text-[var(--primary)] font-semibold py-3 px-6 rounded-lg shadow-md flex items-center justify-center mx-auto mt-12 transition-colors duration-300"
+      className="group relative bg-[var(--primary)] hover:bg-[var(--primary)] text-[var(--accent)] font-semibold py-3 px-6 rounded-lg shadow-md flex items-center justify-center mx-auto mt-12 transition-colors duration-300"
       onClick={handleDownload}
     >
       <Download className="mr-2" size={20} />

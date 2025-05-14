@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export const VanishText = () => {
   return (
     <div className=" px-4 py-24 text-center md:py-24">
-      <h3 className="text-3xl font-medium text-yellow-400 sm:text-4xl md:text-5xl lg:text-6xl">
+      <h3 className="text-3xl font-medium text-yellow-400 sm:text-4xl md:text-5xl lg:text-6xl font-anton">
         We provide services to
         <AnimatedText
           phrases={[

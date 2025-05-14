@@ -4,6 +4,7 @@ import { ImageTrailHero } from '../components/ImageTrailHero'
 import Services from '../components/Services'
 import PricingTiers from '../components/PricingTiers'
 import ServiceCategories from '../components/ServiceCategories'
+import ServicePackages from '../components/ServicePackages'
 
 const LandingPage = () => {
   return (
@@ -11,7 +12,8 @@ const LandingPage = () => {
     <ImageTrailHero/>
     <Services/>
     {/* <PricingTiers/> */}
-    <ServiceCategories/>
+    {/* <ServiceCategories/> */}
+    <ServicePackages/>
     </>
   )
 }

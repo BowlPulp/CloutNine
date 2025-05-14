@@ -172,7 +172,7 @@ export default function ServicePackages() {
     },
     {
       question: "Do you offer website maintenance after launch?",
-      answer: "Yes, we offer website maintenance plans starting at $99/month which include security updates, performance optimization, content updates, and technical support to keep your site running smoothly."
+      answer: "Yes, we offer website maintenance plans starting at 2500/month which include security updates, performance optimization, content updates, and technical support to keep your site running smoothly."
     }
   ];
 

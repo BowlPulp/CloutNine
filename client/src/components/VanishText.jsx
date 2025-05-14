@@ -5,7 +5,7 @@ export const VanishText = () => {
   return (
     <div className=" px-4 py-24 text-center md:py-24">
       <h3
-  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-yellow-400"
+  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-yellow-400 mt-10"
   style={{ fontFamily: "'Anton', sans-serif", fontWeight: 500 }}
 >
   We provide services to

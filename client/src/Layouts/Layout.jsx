@@ -4,10 +4,12 @@ import Footer from '../components/Footer';
 import FlipNavWrapper from '../components/FlipNav';
 import WhatsAppButton from '../components/WhatsAppFloatButton';
 import WhatsAppFloatButton from '../components/WhatsAppFloatButton';
+import { Example } from '../components/SimpleFloatingNav';
 function Layout() {
   return (
     <div>
-        <FlipNavWrapper/>
+        {/* <FlipNavWrapper/> */}
+        <Example/>
         <WhatsAppFloatButton/>
         {/* Render the nested routes for the User role */}
         <Outlet />

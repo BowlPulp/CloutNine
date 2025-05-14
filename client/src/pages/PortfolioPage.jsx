@@ -18,6 +18,14 @@ const portfolioData = {
       { id: 6, title: "TBHC #3", videoUrl: "https://drive.google.com/file/d/1_Iyj7LfB2VFH5tZ6u9h95svtbtMZWcVd/preview" },
       { id: 7, title: "TBHC #4", videoUrl: "https://drive.google.com/file/d/1xzFusIaiswnxOZo3nQH1Ht4zbc7w4Ciq/preview" },
       { id: 8, title: "TBHC #5", videoUrl: "https://drive.google.com/file/d/1cNzkilG-AWvB1fvSA2uBhrCccms2Enyi/preview" },
+      { id: 9, title: "BTS #1", videoUrl: "https://drive.google.com/file/d/1PjBJkUfsP7o7ZL4pmVlMNlVCeMORsIaB/preview" },
+      { id: 10, title: "BTS #2", videoUrl: "https://drive.google.com/file/d/1Hd-7xJ7e7XIWUf_lZJ5SUQ3jqqzs9_wY/preview" },
+      { id: 11, title: "BTS #3", videoUrl: "https://drive.google.com/file/d/1unj14mrHE7Qc14CM77Cb9PFcLVqUYUWA/preview" },
+      { id: 12, title: "Mehfil #1", videoUrl: "https://drive.google.com/file/d/1eEfctL9CnMiKTAAkWFrr0VXYbOQtG-OQ/preview" },
+      { id: 13, title: "Mehfil #2", videoUrl: "https://drive.google.com/file/d/1-mAUKSB0vYb1CuwcS0vPOLqP2iA_f8m8/preview" },
+      { id: 14, title: "Mehfil #3", videoUrl: "https://drive.google.com/file/d/1bxVLmgOar_xz3iJcocNtt39dLzWbnDkV/preview" },
+      { id: 15, title: "Mehfil #4", videoUrl: "https://drive.google.com/file/d/1Cq8T77UGCFa_v2dP9brTkD1tzk1w7dSG/preview" },
+      { id: 16, title: "Mehfil #5", videoUrl: "https://drive.google.com/file/d/1S-aQw1zl_X1Cs1DL9RgjELz2dQb0sqHt/preview" },
     ]
   },
   "Real Estate": {
@@ -25,8 +33,8 @@ const portfolioData = {
     color: "bg-blue-50",
     icon: Building,
     videos: [
-      { id: 1, title: "Luxury Apartment", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-      { id: 2, title: "Commercial Space", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+      { id: 1, title: "Real Estate #1", videoUrl: "https://drive.google.com/file/d/1RyKCKfSxbVj1OmtkVjg0nuNziZ1mtnKz/preview" },
+      { id: 2, title: "Real Estate #2", videoUrl: "https://drive.google.com/file/d/1S0T7prI8_L_GljVUOddmxrmJeyRCWZ-r/preview" },
     ]
   },
   "Gym & Fitness": {
@@ -49,20 +57,20 @@ const portfolioData = {
     color: "bg-pink-50",
     icon: Rocket,
     videos: [
-      { id: 1, title: "Hair Garage #1", videoUrl: "https://drive.google.com/file/d/194fHwzhRVLjudsA4ECb0VbvNzCsCpu4G/view?usp=drive_link" },
-      { id: 2, title: "Hair Garage #2", videoUrl: "https://drive.google.com/file/d/1-pNnNY_EaYxdOrdX-GllNLZOVihJuC-T/view?usp=drive_linkQ" },
-      { id: 3, title: "Hair Garage #3", videoUrl: "https://drive.google.com/file/d/1Xj_I1Gc-qcThF18e0sr0MsHKf7di33JQ/view?usp=drive_link" },
+      { id: 1, title: "Hair Garage #1", videoUrl: "https://drive.google.com/file/d/194fHwzhRVLjudsA4ECb0VbvNzCsCpu4G/preview" },
+      { id: 2, title: "Hair Garage #2", videoUrl: "https://drive.google.com/file/d/1-pNnNY_EaYxdOrdX-GllNLZOVihJuC-T/preview" },
+      { id: 3, title: "Hair Garage #3", videoUrl: "https://drive.google.com/file/d/1Xj_I1Gc-qcThF18e0sr0MsHKf7di33JQ/preview" },
     ]
   },
-  "Startups / Product-based Brands": {
-    description: "Creative visual solutions that bring innovative startup concepts and product narratives to life, capturing brand essence and vision.",
-    color: "bg-purple-50",
-    icon: Rocket,
-    videos: [
-      { id: 1, title: "Tech Startup", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-      { id: 2, title: "Product Launch", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-    ]
-  }
+  // "Startups / Product-based Brands": {
+  //   description: "Creative visual solutions that bring innovative startup concepts and product narratives to life, capturing brand essence and vision.",
+  //   color: "bg-purple-50",
+  //   icon: Rocket,
+  //   videos: [
+  //     { id: 1, title: "Tech Startup", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+  //     { id: 2, title: "Product Launch", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+  //   ]
+  // }
 };
 
 const VideoPlayer = ({ videoUrl, title, onClose }) => (

@@ -10,7 +10,7 @@ const LandingPage = () => {
   return (
     <>
     <ImageTrailHero/>
-    {/* <Services/> */}
+    <Services/>
     {/* <PricingTiers/> */}
     {/* <ServiceCategories/> */}
     <ServicePackages/>

@@ -201,7 +201,7 @@ export default function ServicePackages() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-300 to-yellow-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-300 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Page Title */}
         <motion.div 
@@ -211,7 +211,7 @@ export default function ServicePackages() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-            Our <span className="text-[var(--primary)]">Services</span>
+            Our <span className="text-[var(--primary)]">Packages</span>
           </h1>
           <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
             Choose the perfect plan to elevate your online presence

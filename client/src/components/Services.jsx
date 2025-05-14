@@ -180,7 +180,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-yellow-100 to-blue-100 min-h-screen py-16 px-4">
+    <div className="bg-gradient-to-br from-gray-100 to-blue-100 min-h-screen py-16 px-4">
       <div className="container mx-auto">
         <h2 className="text-4xl font-bold text-center text-blue-900 mb-12">
           Our Services

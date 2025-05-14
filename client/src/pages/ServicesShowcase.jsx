@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
   Settings,
   FileText,
@@ -11,6 +11,8 @@ import {
   Code,
 } from "lucide-react";
 
+const CARD_HEIGHT = 500;
+
 const servicesData = [
   {
     id: 1,
@@ -19,7 +21,7 @@ const servicesData = [
       "Professional setup and optimization of your social media profiles to maximize visibility and engagement.",
     icon: Settings,
     color: "bg-blue-500",
-    image: "AccountSetup.jpg",
+    image: "",
   },
   {
     id: 2,
@@ -28,7 +30,7 @@ const servicesData = [
       "High-quality, engaging content tailored to your brand voice and target audience needs.",
     icon: FileText,
     color: "bg-purple-500",
-    image: "ContentCreation.jpg",
+    image: "",
   },
   {
     id: 3,
@@ -37,7 +39,7 @@ const servicesData = [
       "Strategic planning to align content with business goals and audience interests for maximum impact.",
     icon: Lightbulb,
     color: "bg-yellow-500",
-    image: "ContentStrategy.jpg",
+    image: ".jpg",
   },
   {
     id: 4,
@@ -86,61 +88,62 @@ const servicesData = [
   },
 ];
 
-const fadeInVariant = (direction = "left") => ({
-  hidden: {
-    opacity: 0,
-    x: direction === "left" ? -100 : 100,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-});
+const StickyCard = ({ service, position, scrollYProgress }) => {
+  const scaleFromPct = (position - 1) / servicesData.length;
+  const y = useTransform(scrollYProgress, [scaleFromPct, 1], [0, -CARD_HEIGHT]);
+  const isOdd = position % 2;
+
+  const Icon = service.icon;
+
+  return (
+    <motion.div
+      style={{
+        height: CARD_HEIGHT,
+        y: position === servicesData.length ? undefined : y,
+        background: isOdd ? "#111827" : "white", // dark gray or white
+        color: isOdd ? "white" : "black",
+      }}
+      className="sticky top-0 flex w-full origin-top flex-col md:flex-row items-center justify-center px-4 py-8"
+    >
+      <img
+        src={service.image}
+        alt={service.title}
+        className="w-full md:w-1/2 rounded-lg shadow-lg mb-6 md:mb-0 md:mr-8"
+      />
+      <div className="md:w-1/2">
+        <div className="flex items-center mb-4">
+          <div className={`p-3 rounded-full text-white ${service.color} mr-3`}>
+            <Icon className="w-6 h-6" />
+          </div>
+          <h3 className="text-3xl font-bold">{service.title}</h3>
+        </div>
+        <p className="text-lg">{service.description}</p>
+      </div>
+    </motion.div>
+  );
+};
 
 const ServiceShowcase = () => {
-  return (
-    <section className="py-16 bg-gray-100">
-      <div className="container mx-auto px-4 space-y-24">
-        {servicesData.map((service, index) => {
-          const Icon = service.icon;
-          const isEven = index % 2 === 0;
-          return (
-            <motion.div
-              key={service.id}
-              className={`flex flex-col md:flex-row items-center ${
-                isEven ? "md:flex-row" : "md:flex-row-reverse"
-              }`}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={fadeInVariant(isEven ? "left" : "right")}
-            >
-              {/* Image */}
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-full md:w-1/2 rounded-lg shadow-lg"
-                loading="lazy"
-              />
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
 
-              {/* Text Content */}
-              <div className="mt-6 md:mt-0 md:w-1/2 md:px-10">
-                <div className="flex items-center mb-4">
-                  <div
-                    className={`p-3 rounded-full text-white ${service.color} mr-3`}
-                  >
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-3xl font-bold">{service.title}</h3>
-                </div>
-                <p className="text-lg text-gray-700">{service.description}</p>
-              </div>
-            </motion.div>
-          );
-        })}
-      </div>
-    </section>
+  return (
+    <>
+      <section ref={ref} className="relative">
+        {servicesData.map((service, idx) => (
+          <StickyCard
+            key={service.id}
+            service={service}
+            scrollYProgress={scrollYProgress}
+            position={idx + 1}
+          />
+        ))}
+      </section>
+      <div className="h-screen bg-black" />
+    </>
   );
 };
 

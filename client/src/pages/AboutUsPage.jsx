@@ -3,7 +3,7 @@ import { ArrowUp, Target, BarChart2, Rocket } from 'lucide-react';
 
 export default function AboutUsPage() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-16 px-4">
+        <div className="min-h-screen bg-gradient-to-br from-blue-300 to-gray-100 py-16 px-4">
             <div className="container mx-auto max-w-6xl">
                 {/* Who We Are Section */}
                 <section className="mb-16 animate-fade-in">

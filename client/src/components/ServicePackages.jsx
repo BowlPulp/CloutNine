@@ -35,7 +35,7 @@ export default function ServicePackages() {
         "Collaboration coordination"
       ],
       popular: false,
-      color: "bg-blue-100",
+      color: "bg-red-300",
       icon: <Zap className="text-blue-500" />
     },
     {
@@ -56,7 +56,7 @@ export default function ServicePackages() {
         "Collaboration coordination"
       ],
       popular: true,
-      color: "bg-yellow-100",
+      color: "bg-orange-200",
       icon: <Award className="text-purple-500" />
     },
     {
@@ -77,7 +77,7 @@ export default function ServicePackages() {
         "Dedicated account manager"
       ],
       popular: false,
-      color: "bg-sky-100",
+      color: "bg-green-100",
       icon: <Rocket className="text-sky-500" />
     }
   ];
@@ -295,6 +295,7 @@ export default function ServicePackages() {
                   </div>
                   
                   <div className="mt-auto">
+                    <Link to='/contact'>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -306,6 +307,7 @@ export default function ServicePackages() {
                     >
                       Get Started
                     </motion.button>
+                    </Link>
                   </div>
                 </div>
               </motion.div>

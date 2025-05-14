@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, PlayCircle, Coffee, Building, Dumbbell, Rocket } from 'lucide-react';
 import { DrawCircleText } from '../components/DrawCircleText';
+import { VanishText } from '../components/VanishText';
 
 // Dummy data - replace with actual video links
 const portfolioData = {
@@ -9,8 +10,8 @@ const portfolioData = {
     color: "bg-orange-50",
     icon: Coffee,
     videos: [
-      { id: 1, title: "Tealogy Cafe", videoUrl: "https://drive.google.com/file/d/1FyYu2jwkruA0LJo1rrk9iAing9qtJ8XC/view?usp=drive_link" },
-      { id: 2, title: "Mehfil Cafe", videoUrl: "https://drive.google.com/file/d/1Cq8T77UGCFa_v2dP9brTkD1tzk1w7dSG/view?usp=drive_link" },
+      { id: 1, title: "Tealogy Cafe", videoUrl: "https://drive.google.com/uc?export=download&id=1FyYu2jwkruA0LJo1rrk9iAing9qtJ8XC" },
+      { id: 2, title: "Mehfil Cafe", videoUrl: "https://drive.google.com/uc?export=download&id=1Cq8T77UGCFa_v2dP9brTkD1tzk1w7dSG" },
     ]
   },
   "Real Estate": {
@@ -162,8 +163,8 @@ const PortfolioPage = () => {
   return (
     <>
     <div className='bg-gradient-to-br from-blue-500 to-yellow-100'>
-      <DrawCircleText/>
-   
+      {/* <DrawCircleText/> */}
+    <VanishText/>
     <div className="min-h-screen p-4 md:p-8">
       <div className="container mx-auto">
         {/* Landing View - Category Selection */}
@@ -192,7 +193,7 @@ const PortfolioPage = () => {
           <div>
             <button 
               onClick={() => setSelectedCategory(null)}
-              className="mb-4 flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+              className="mb-4 flex items-center text-black hover:text-blue-800 transition-colors"
             >
               <ChevronLeft /> Back to Categories
             </button>

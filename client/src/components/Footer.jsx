@@ -29,18 +29,18 @@ function Footer() {
               Empowering brands to conquer the digital landscape through strategic marketing and creative excellence.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.facebook.com/share/1Efy6rUc8j/" className="text-gray-400 hover:text-white transition-colors">
                 <Facebook size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              {/* <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Twitter size={24} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              </a> */}
+              <a href="https://www.instagram.com/cloutnine.in/" className="text-gray-400 hover:text-white transition-colors">
                 <Instagram size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              {/* <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin size={24} />
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -50,9 +50,8 @@ function Footer() {
             <ul className="space-y-2">
               {[
                 { name: 'About Us', link: '/about' },
-                { name: 'Services', link: '#' },
+                { name: 'Services', link: '/services' },
                 { name: 'Portfolio', link: '/portfolio' },
-                { name: 'Blog', link: '#' },
                 { name: 'Contact', link: '/contact' }
               ].map((item) => (
                 <li key={item.name}>

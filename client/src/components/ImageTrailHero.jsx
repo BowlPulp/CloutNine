@@ -47,9 +47,10 @@ export const ImageTrailHero = () => {
 
 const Copy = () => {
   return (
-    <div className="absolute bottom-0 left-0 right-0 z-[999999]">
+  <div className="absolute bottom-60 md:bottom-30 left-0 right-0 z-[999999]">
+
       <div className="mx-auto flex max-w-7xl items-end justify-between p-4 md:p-8">
-        <div>
+        <div className="">
           <h1 className="mb-6 max-w-4xl text-6xl font-black leading-[1.1] text-slate-900 md:text-8xl">
             Lifting your brand with <span className="text-[#004396]">CLOUTNINE</span>
           </h1>

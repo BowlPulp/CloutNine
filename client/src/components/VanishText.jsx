@@ -4,20 +4,23 @@ import { motion } from "framer-motion";
 export const VanishText = () => {
   return (
     <div className=" px-4 py-24 text-center md:py-24">
-      <h3 className="text-3xl font-medium text-yellow-400 sm:text-4xl md:text-5xl lg:text-6xl font-anton">
-        We provide services to
-        <AnimatedText
-          phrases={[
-            "Cafe",
-            "Hotels",
-            "Restaurants",
-            "Real Estates",
-            "Gym & Fitness",
-            "Spa & Saloons",
-            "Small Businesses",
-          ]}
-        />
-      </h3>
+      <h3
+  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-yellow-400"
+  style={{ fontFamily: "'Anton', sans-serif", fontWeight: 500 }}
+>
+  We provide services to
+  <AnimatedText
+    phrases={[
+      "Cafe",
+      "Hotels",
+      "Restaurants",
+      "Real Estates",
+      "Gym & Fitness",
+      "Spa & Saloons",
+      "Small Businesses",
+    ]}
+  />
+</h3>
     </div>
   );
 };

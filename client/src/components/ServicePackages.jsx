@@ -56,7 +56,7 @@ export default function ServicePackages() {
         "Collaboration coordination"
       ],
       popular: true,
-      color: "bg-purple-100",
+      color: "bg-yellow-100",
       icon: <Award className="text-purple-500" />
     },
     {

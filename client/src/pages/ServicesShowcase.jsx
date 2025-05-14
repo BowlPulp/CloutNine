@@ -21,7 +21,7 @@ const servicesData = [
       "Professional setup and optimization of your social media profiles to maximize visibility and engagement.",
     icon: Settings,
     color: "bg-blue-500",
-    image: "",
+    image: "", // No image provided
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ const servicesData = [
       "High-quality, engaging content tailored to your brand voice and target audience needs.",
     icon: FileText,
     color: "bg-purple-500",
-    image: "",
+    image: "", // No image provided
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const servicesData = [
       "Strategic planning to align content with business goals and audience interests for maximum impact.",
     icon: Lightbulb,
     color: "bg-yellow-500",
-    image: ".jpg",
+    image: "", // No image provided
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const servicesData = [
       "Optimal timing of posts to reach your audience when they're most active and receptive.",
     icon: Calendar,
     color: "bg-green-500",
-    image: "Scheduling.jpg",
+  image: "", // No image provided
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const servicesData = [
       "Reliable and consistent publishing across multiple platforms to maintain audience engagement.",
     icon: Send,
     color: "bg-red-500",
-    image: "ContentPosting.jpg",
+    image: "", // No image provided
   },
   {
     id: 6,
@@ -66,7 +66,7 @@ const servicesData = [
       "Strategic promotion to expand reach and drive meaningful engagement with your target audience.",
     icon: Megaphone,
     color: "bg-indigo-500",
-    image: "Marketing.jpg",
+  image: "", // No image provided
   },
   {
     id: 7,
@@ -75,7 +75,7 @@ const servicesData = [
       "Comprehensive data analysis and insights to measure performance and inform future strategies.",
     icon: BarChart2,
     color: "bg-teal-500",
-    image: "Report.jpg",
+    image: "", // No image provided
   },
   {
     id: 8,
@@ -84,7 +84,7 @@ const servicesData = [
       "Professional website creation tailored to your brand and business objectives.",
     icon: Code,
     color: "bg-pink-500",
-    image: "Website.jpg",
+    image: "", // No image provided
   },
 ];
 
@@ -100,16 +100,25 @@ const StickyCard = ({ service, position, scrollYProgress }) => {
       style={{
         height: CARD_HEIGHT,
         y: position === servicesData.length ? undefined : y,
-        background: isOdd ? "#111827" : "white", // dark gray or white
+        background: isOdd ? "#111827" : "white",
         color: isOdd ? "white" : "black",
       }}
       className="sticky top-0 flex w-full origin-top flex-col md:flex-row items-center justify-center px-4 py-8"
     >
-      <img
-        src={service.image}
-        alt={service.title}
-        className="w-full md:w-1/2 rounded-lg shadow-lg mb-6 md:mb-0 md:mr-8"
-      />
+      <div className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-8 overflow-hidden rounded-lg shadow-lg">
+        {service.image ? (
+          <img
+            src={service.image}
+            alt={service.title}
+            className="w-full h-[300px] object-cover rounded-lg" // Fixed height and object-cover
+            style={{ maxWidth: "100%", maxHeight: "100%" }} // Ensure no overflow
+          />
+        ) : (
+          <div className="w-full h-[300px] bg-gray-200 flex items-center justify-center rounded-lg">
+            <span className="text-gray-500">No Image</span>
+          </div>
+        )}
+      </div>
       <div className="md:w-1/2">
         <div className="flex items-center mb-4">
           <div className={`p-3 rounded-full text-white ${service.color} mr-3`}>
@@ -142,7 +151,7 @@ const ServiceShowcase = () => {
           />
         ))}
       </section>
-      <div className="h-screen bg-black" />
+     
     </>
   );
 };

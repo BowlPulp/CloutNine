@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { CheckCircle, X, ChevronDown, ChevronUp, Facebook, Instagram, Twitter, Globe, Code, Layers, Database, Zap, Award, Rocket } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import {Link} from 'react-router-dom';
 // Main component
 export default function ServicePackages() {
   // State for toggle between service types
@@ -362,23 +362,27 @@ export default function ServicePackages() {
           </div>
         </motion.div>
         
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
-          className="mt-16 text-center"
-        >
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to get started?</h3>
-          <p className="text-gray-600 mb-6">Still have questions? Contact our team for a free consultation.</p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300"
-          >
-            Contact Us
-          </motion.button>
-        </motion.div>
+       {/* CTA Section */}
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.8, duration: 0.5 }}
+  className="mt-16 text-center"
+>
+  <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to get started?</h3>
+  <p className="text-gray-600 mb-6">Still have questions? Contact our team for a free consultation.</p>
+  
+  <Link to="/contact">
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300"
+    >
+      Contact Us
+    </motion.button>
+  </Link>
+</motion.div>
+
       </div>
     </div>
   );

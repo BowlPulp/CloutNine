@@ -84,7 +84,7 @@ const servicesData = [
       "Professional website creation tailored to your brand and business objectives.",
     icon: Code,
     color: "bg-pink-500",
-    image: "", // No image provided
+    image: "Website.jpg", // No image provided
   },
 ];
 

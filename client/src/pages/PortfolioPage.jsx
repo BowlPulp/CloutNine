@@ -161,10 +161,10 @@ const PortfolioPage = () => {
 
   return (
     <>
-    <div>
+    <div className='bg-gradient-to-br from-blue-500 to-yellow-100'>
       <DrawCircleText/>
-    </div>
-    <div className="min-h-screen bg-gray-100 p-4 md:p-8">
+   
+    <div className="min-h-screen p-4 md:p-8">
       <div className="container mx-auto">
         {/* Landing View - Category Selection */}
         {!selectedCategory ? (
@@ -202,6 +202,7 @@ const PortfolioPage = () => {
         )}
       </div>
     </div>
+     </div>
       </>
   );
 };

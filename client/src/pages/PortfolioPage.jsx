@@ -3,15 +3,21 @@ import { ChevronLeft, ChevronRight, PlayCircle, Coffee, Building, Dumbbell, Rock
 import { DrawCircleText } from '../components/DrawCircleText';
 import { VanishText } from '../components/VanishText';
 
-// Dummy data - replace with actual video links
+// Dummy data - replace with actual embeddable video links
 const portfolioData = {
   "Cafes / Hotels / Restaurants": {
     description: "Crafting immersive dining experiences that blend aesthetic design with culinary excellence, transforming spaces into memorable destinations.",
     color: "bg-orange-50",
     icon: Coffee,
     videos: [
-      { id: 1, title: "Tealogy Cafe", videoUrl: "https://drive.google.com/uc?export=download&id=1FyYu2jwkruA0LJo1rrk9iAing9qtJ8XC" },
-      { id: 2, title: "Mehfil Cafe", videoUrl: "https://drive.google.com/uc?export=download&id=1Cq8T77UGCFa_v2dP9brTkD1tzk1w7dSG" },
+      { id: 1, title: "Tealogy Cafe #1", videoUrl: "https://drive.google.com/file/d/1FyYu2jwkruA0LJo1rrk9iAing9qtJ8XC/preview" },
+      { id: 2, title: "Tealogy Cafe #2", videoUrl: "https://drive.google.com/file/d/1OlTPf_gwn90kSxpSwAj51o-X80-R23Rv/preview" },
+      { id: 3, title: "Tealogy Cafe #3", videoUrl: "https://drive.google.com/file/d/1LTnA69CkNRTRMKwK2kMMOHcsK7NloRsd/preview" },
+      { id: 4, title: "TBHC #1", videoUrl: "https://drive.google.com/file/d/113Kf9Bs6vPZagoXAwt5OfC1Wv-z4xDgJ/preview" },
+      { id: 5, title: "TBHC #2", videoUrl: "https://drive.google.com/file/d/1_C6HEtX42KtLj4o6NbW2a7ECICZZwn0U/preview" },
+      { id: 6, title: "TBHC #3", videoUrl: "https://drive.google.com/file/d/1_Iyj7LfB2VFH5tZ6u9h95svtbtMZWcVd/preview" },
+      { id: 7, title: "TBHC #4", videoUrl: "https://drive.google.com/file/d/1xzFusIaiswnxOZo3nQH1Ht4zbc7w4Ciq/preview" },
+      { id: 8, title: "TBHC #5", videoUrl: "https://drive.google.com/file/d/1cNzkilG-AWvB1fvSA2uBhrCccms2Enyi/preview" },
     ]
   },
   "Real Estate": {
@@ -19,8 +25,8 @@ const portfolioData = {
     color: "bg-blue-50",
     icon: Building,
     videos: [
-      { id: 1, title: "Luxury Apartment", videoUrl: "https://example.com/video3.mp4" },
-      { id: 2, title: "Commercial Space", videoUrl: "https://example.com/video4.mp4" },
+      { id: 1, title: "Luxury Apartment", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+      { id: 2, title: "Commercial Space", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
     ]
   },
   "Gym & Fitness": {
@@ -28,8 +34,14 @@ const portfolioData = {
     color: "bg-green-50",
     icon: Dumbbell,
     videos: [
-      { id: 1, title: "Fitness Center", videoUrl: "https://example.com/video5.mp4" },
-      { id: 2, title: "Personal Training", videoUrl: "https://example.com/video6.mp4" },
+      { id: 1, title: "Evolution Fitness #1", videoUrl: "https://drive.google.com/file/d/1Ph7L7AjP_qkdUuJTXhy02oWoZExmcuJL/preview" },
+      { id: 2, title: "Evolution Fitness #2", videoUrl: "https://drive.google.com/file/d/1J-rCT9xIy371nvaV4ecW1nD6emxbab6w/preview" },
+      { id: 3, title: "Evolution Fitness #3", videoUrl: "https://drive.google.com/file/d/1JoUXQvfRMprAuLV5d70aTzfaQx767Beu/preview" },
+      { id: 4, title: "AJ Fitness #1", videoUrl: "https://drive.google.com/file/d/14uH6Dy67U5FA2ng50Vem7aHRaKzbuASv/preview" },
+      { id: 5, title: "AJ Fitness #2", videoUrl: "https://drive.google.com/file/d/1-A9tDcrOIVMEq8HKR0OGAATowv5huDnM/preview" },
+      { id: 6, title: "AJ Fitness #3", videoUrl: "https://drive.google.com/file/d/1zPe6QLDsDUXEZSqR2oqggSTkw5eBopLO/preview" },
+      { id: 7, title: "AJ Fitness #4", videoUrl: "https://drive.google.com/file/d/1dyqEZGYarInyGhTFdVBIpGcQuA39Y7oN/preview" },
+      { id: 8, title: "AJ Fitness #5", videoUrl: "https://drive.google.com/file/d/1X3C3aAD-lKDaFU09NPSuShK18le446XF/preview" },
     ]
   },
   "Spa & Salon": {
@@ -37,8 +49,9 @@ const portfolioData = {
     color: "bg-pink-50",
     icon: Rocket,
     videos: [
-      { id: 1, title: "Spa Interior", videoUrl: "https://example.com/video7.mp4" },
-      { id: 2, title: "Salon Makeover", videoUrl: "https://example.com/video8.mp4" },
+      { id: 1, title: "Hair Garage #1", videoUrl: "https://drive.google.com/file/d/194fHwzhRVLjudsA4ECb0VbvNzCsCpu4G/view?usp=drive_link" },
+      { id: 2, title: "Hair Garage #2", videoUrl: "https://drive.google.com/file/d/1-pNnNY_EaYxdOrdX-GllNLZOVihJuC-T/view?usp=drive_linkQ" },
+      { id: 3, title: "Hair Garage #3", videoUrl: "https://drive.google.com/file/d/1Xj_I1Gc-qcThF18e0sr0MsHKf7di33JQ/view?usp=drive_link" },
     ]
   },
   "Startups / Product-based Brands": {
@@ -46,55 +59,47 @@ const portfolioData = {
     color: "bg-purple-50",
     icon: Rocket,
     videos: [
-      { id: 1, title: "Tech Startup", videoUrl: "https://example.com/video9.mp4" },
-      { id: 2, title: "Product Launch", videoUrl: "https://example.com/video10.mp4" },
+      { id: 1, title: "Tech Startup", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+      { id: 2, title: "Product Launch", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
     ]
   }
 };
 
-const VideoPlayer = ({ videoUrl, title, onClose }) => {
-  return (
-    <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center">
-      <div className="relative w-full max-w-4xl aspect-video">
-        <button 
-          onClick={onClose} 
-          className="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors"
-        >
-          Close
-        </button>
-        <video 
-          controls 
-          autoPlay 
-          className="w-full h-full"
-        >
-          <source src={videoUrl} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+const VideoPlayer = ({ videoUrl, title, onClose }) => (
+  <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center">
+    <div className="relative w-full max-w-4xl aspect-video">
+      <button
+        onClick={onClose}
+        className="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors"
+      >
+        Close
+      </button>
+      <iframe
+        src={videoUrl}
+        title={title}
+        allow="autoplay; fullscreen"
+        allowFullScreen
+        className="w-full h-full rounded-lg"
+      />
     </div>
-  );
-};
+  </div>
+);
 
 const PortfolioSection = ({ category }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const { videos, color } = portfolioData[category];
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % videos.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + videos.length) % videos.length);
-  };
+  const handleNext = () => setCurrentIndex((prev) => (prev + 1) % videos.length);
+  const handlePrev = () => setCurrentIndex((prev) => (prev - 1 + videos.length) % videos.length);
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      {/* Mobile View (Vertical Scroll) */}
+      {/* Mobile View */}
       <div className={`block md:hidden w-full overflow-y-auto max-h-[600px] p-4 space-y-4 ${color}`}>
         {videos.map((video) => (
-          <div 
-            key={video.id} 
+          <div
+            key={video.id}
             className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105"
             onClick={() => setSelectedVideo(video)}
           >
@@ -106,16 +111,16 @@ const PortfolioSection = ({ category }) => {
         ))}
       </div>
 
-      {/* Desktop View (Horizontal Swipe) */}
+      {/* Desktop View */}
       <div className="hidden md:flex items-center justify-center w-full max-w-4xl">
-        <button 
-          onClick={handlePrev} 
+        <button
+          onClick={handlePrev}
           className="p-2 hover:bg-gray-200 rounded-full transition-colors"
         >
           <ChevronLeft size={32} />
         </button>
 
-        <div 
+        <div
           className="relative w-full max-w-3xl mx-4 group"
           onClick={() => setSelectedVideo(videos[currentIndex])}
         >
@@ -129,8 +134,8 @@ const PortfolioSection = ({ category }) => {
           </div>
         </div>
 
-        <button 
-          onClick={handleNext} 
+        <button
+          onClick={handleNext}
           className="p-2 hover:bg-gray-200 rounded-full transition-colors"
         >
           <ChevronRight size={32} />
@@ -139,8 +144,8 @@ const PortfolioSection = ({ category }) => {
 
       {/* Fullscreen Video Player */}
       {selectedVideo && (
-        <VideoPlayer 
-          videoUrl={selectedVideo.videoUrl} 
+        <VideoPlayer
+          videoUrl={selectedVideo.videoUrl}
           title={selectedVideo.title}
           onClose={() => setSelectedVideo(null)}
         />
@@ -152,59 +157,45 @@ const PortfolioSection = ({ category }) => {
 const PortfolioPage = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  const categories = [
-    "Cafes / Hotels / Restaurants",
-    "Real Estate",
-    "Gym & Fitness",
-    "Spa & Salon",
-    "Startups / Product-based Brands"
-  ];
-
   return (
-    <>
-    <div className='bg-gradient-to-br from-blue-500 to-yellow-100'>
-      {/* <DrawCircleText/> */}
-    <VanishText/>
-    <div className="min-h-screen p-4 md:p-8">
-      <div className="container mx-auto">
-        {/* Landing View - Category Selection */}
-        {!selectedCategory ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {Object.entries(portfolioData).map(([category, { description, color, icon: Icon }]) => (
-              <div 
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`${color} shadow-md rounded-lg p-6 cursor-pointer 
-                           transform transition-all duration-300 
-                           hover:scale-105 hover:shadow-xl 
-                           flex flex-col items-center justify-center text-center space-y-4`}
+    <div className="bg-gradient-to-br from-blue-500 to-yellow-100">
+      <VanishText/>
+      <div className="min-h-screen p-4 md:p-8">
+        <div className="container mx-auto">
+          {!selectedCategory ? (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {Object.entries(portfolioData).map(([category, { description, color, icon: Icon }]) => (
+                <div
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`${color} shadow-md rounded-lg p-6 cursor-pointer 
+                             transform transition-all duration-300 
+                             hover:scale-105 hover:shadow-xl 
+                             flex flex-col items-center justify-center text-center space-y-4`}
+                >
+                  <Icon className="w-16 h-16 text-gray-700 mb-4" />
+                  <h2 className="text-xl font-bold text-gray-800 hover:text-blue-600 transition-colors">
+                    {category}
+                  </h2>
+                  <p className="text-sm text-gray-600 max-w-xs">{description}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div>
+              <button
+                onClick={() => setSelectedCategory(null)}
+                className="mb-4 flex items-center text-black hover:text-yellow-800 transition-colors"
               >
-                <Icon className="w-16 h-16 text-gray-700 mb-4" />
-                <h2 className="text-xl font-bold text-gray-800 hover:text-blue-600 transition-colors">
-                  {category}
-                </h2>
-                <p className="text-sm text-gray-600 max-w-xs">
-                  {description}
-                </p>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div>
-            <button 
-              onClick={() => setSelectedCategory(null)}
-              className="mb-4 flex items-center text-black hover:text-blue-800 transition-colors"
-            >
-              <ChevronLeft /> Back to Categories
-            </button>
-            <h1 className="text-2xl font-bold mb-6 text-center">{selectedCategory}</h1>
-            <PortfolioSection category={selectedCategory} />
-          </div>
-        )}
+                <ChevronLeft /> Back to Categories
+              </button>
+              <h1 className="text-2xl font-bold mb-6 text-center">{selectedCategory}</h1>
+              <PortfolioSection category={selectedCategory} />
+            </div>
+          )}
+        </div>
       </div>
     </div>
-     </div>
-      </>
   );
 };
 
